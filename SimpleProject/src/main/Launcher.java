@@ -35,6 +35,5 @@ public class Launcher {
         people.add(new Person(1,"Bojan","Stojkovic",22));
         people.add(new Person(1,"Marko","Zivojinovic",22));
         Data.writeToJSON(people,path);
-
     }
 }
