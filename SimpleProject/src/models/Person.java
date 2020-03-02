@@ -1,6 +1,7 @@
 package models;
 
 public class Person {
+    //Dodat komentar
     private int id;
     private String firstName;
     private String lastName;
