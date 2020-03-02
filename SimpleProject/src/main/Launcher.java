@@ -31,6 +31,16 @@ public class Launcher {
             return new Gson().toJson(Data.readFromJson(path));
         });
 
+        post("/newPerson",(request, response) -> {
+            int id = Integer.parseInt(request.queryParams("id"));
+            String firstName = request.queryParams("firstName");
+            String lastName = request.queryParams("lastName");
+            int age = Integer.parseInt("age");
+            ArrayList<Person> people = Data.readFromJson(path);
+            people.add(new Person(id,firstName,lastName,age));
+            Data.writeToJSON(people,path);
+            return new Gson().toJson("true");
+        });
         ArrayList<Person> people = new ArrayList<>();
         people.add(new Person(1,"Bojan","Stojkovic",22));
         people.add(new Person(1,"Marko","Zivojinovic",22));
