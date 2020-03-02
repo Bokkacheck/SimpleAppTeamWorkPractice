@@ -30,6 +30,11 @@ public class Launcher {
         get("/api/getPeople",(request, response) -> {
             return new Gson().toJson(Data.readFromJson(path));
         });
+        post("/api/addPerson",(request, response) -> {
+            System.out.println(request.contentType());
+            System.out.println(request.queryParams().size());
+            return true;
+        });
 
         ArrayList<Person> people = new ArrayList<>();
         people.add(new Person(1,"Bojan","Stojkovic",22));
