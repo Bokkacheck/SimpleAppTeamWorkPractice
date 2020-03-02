@@ -1,10 +1,11 @@
 
 
+
+
 sfsafasfasfas dodatoooo novi faj
-<<<<<<< HEAD
 asfasfasf markova izmena
-=======
 bojan izmenio
->>>>>>> a6b583b0bcff6148ec95ed2adf84935a6e9c71f7
 markova izmena
+
 markova izmena iz grane
+bojanova izmena iz grane
