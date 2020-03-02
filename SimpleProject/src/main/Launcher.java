@@ -30,12 +30,17 @@ public class Launcher {
         get("/api/getPeople",(request, response) -> {
             return new Gson().toJson(Data.readFromJson(path));
         });
+        post("/api/addPerson",(request, response) -> {
+            System.out.println(request.contentType());
+            System.out.println(request.queryParams().size());
+            return true;
+        });
 
         post("/newPerson",(request, response) -> {
             int id = Integer.parseInt(request.queryParams("id"));
             String firstName = request.queryParams("firstName");
             String lastName = request.queryParams("lastName");
-            int age = Integer.parseInt("age");
+            int age = Integer.parseInt(request.queryParams("age"));
             ArrayList<Person> people = Data.readFromJson(path);
             people.add(new Person(id,firstName,lastName,age));
             Data.writeToJSON(people,path);
@@ -43,7 +48,7 @@ public class Launcher {
         });
         ArrayList<Person> people = new ArrayList<>();
         people.add(new Person(1,"Bojan","Stojkovic",22));
-        people.add(new Person(1,"Marko","Zivojinovic",22));
+        people.add(new Person(2,"Marko","Zivojinovic",21));
         Data.writeToJSON(people,path);
     }
 }
